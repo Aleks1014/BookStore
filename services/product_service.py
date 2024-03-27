@@ -1,5 +1,6 @@
 from data.database import read_query, insert_query, update_query
 from data.models import ProductResponse
+from fastapi.responses import FileResponse
 
 
 def get_book_by_id(id):
@@ -19,5 +20,3 @@ def get_book_by_id(id):
             title, description, isbn, price, author_name, subcategory, category, publication_date, cover, publisher,
             format, pages
             in data)
-
-

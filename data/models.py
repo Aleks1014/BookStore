@@ -2,6 +2,10 @@ from datetime import date
 from pydantic import BaseModel, Field, EmailStr, field_validator
 from typing import Optional
 import re
+from fastapi.responses import FileResponse
+from pathlib import Path
+
+
 
 
 class Category(BaseModel):

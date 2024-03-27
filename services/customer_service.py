@@ -21,4 +21,9 @@ def get_account_id(email):
     return data[0][0]
 
 def get_wishlist(id):
-    pass
+    ids = read_query('SELECT product_id FROM wishlist WHERE customer_id=%s', query_params=(id,))
+    result = []
+    for id in ids:
+        product = product_service.get_book_by_id(id[0])
+        result.append(product)
+    return result
